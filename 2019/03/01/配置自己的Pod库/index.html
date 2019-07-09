@@ -108,18 +108,21 @@
 
 
 
-  <meta name="description" content="这宇宙光明只是瞬间 黑暗才是永恒 但 正因为那瞬间的光明 人生才有了追求与希望 而，遇到你 是我最大的幸福   --致Miss原">
+  <meta name="description" content="写这篇的初衷是因为觉得自己在工作中很多技术的实现都是重复的，或者是换工作了之后，或者是下一个项目，总之，有些轮子自己已经造过一次了，就应该让它们沉淀下来，再后面项目使用的时候可以直接使用，或者再进行优化使其更加灵活和更方便应用，这也是一种自己对技术的沉淀和思考的过程。我有同事说有些轮子别人造好了就没必要自己再写了，我一定程度上赞同这个说法，但是就自己本身的技术沉淀来说我是不赞同的。当然，别人造了轮">
 <meta name="keywords" content="化十,IT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="配置自己的Pod库">
 <meta property="og:url" content="https://www.weilni.cn/2019/03/01/配置自己的Pod库/index.html">
 <meta property="og:site_name" content="化十">
-<meta property="og:description" content="这宇宙光明只是瞬间 黑暗才是永恒 但 正因为那瞬间的光明 人生才有了追求与希望 而，遇到你 是我最大的幸福   --致Miss原">
+<meta property="og:description" content="写这篇的初衷是因为觉得自己在工作中很多技术的实现都是重复的，或者是换工作了之后，或者是下一个项目，总之，有些轮子自己已经造过一次了，就应该让它们沉淀下来，再后面项目使用的时候可以直接使用，或者再进行优化使其更加灵活和更方便应用，这也是一种自己对技术的沉淀和思考的过程。我有同事说有些轮子别人造好了就没必要自己再写了，我一定程度上赞同这个说法，但是就自己本身的技术沉淀来说我是不赞同的。当然，别人造了轮">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-25T10:46:39.409Z">
+<meta property="og:image" content="https://www.weilni.cn/2019/03/01/配置自己的Pod库/podSepecdemo.png">
+<meta property="og:image" content="https://www.weilni.cn/2019/03/01/配置自己的Pod库/podspec文件.png">
+<meta property="og:updated_time" content="2019-07-09T07:27:53.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="配置自己的Pod库">
-<meta name="twitter:description" content="这宇宙光明只是瞬间 黑暗才是永恒 但 正因为那瞬间的光明 人生才有了追求与希望 而，遇到你 是我最大的幸福   --致Miss原">
+<meta name="twitter:description" content="写这篇的初衷是因为觉得自己在工作中很多技术的实现都是重复的，或者是换工作了之后，或者是下一个项目，总之，有些轮子自己已经造过一次了，就应该让它们沉淀下来，再后面项目使用的时候可以直接使用，或者再进行优化使其更加灵活和更方便应用，这也是一种自己对技术的沉淀和思考的过程。我有同事说有些轮子别人造好了就没必要自己再写了，我一定程度上赞同这个说法，但是就自己本身的技术沉淀来说我是不赞同的。当然，别人造了轮">
+<meta name="twitter:image" content="https://www.weilni.cn/2019/03/01/配置自己的Pod库/podSepecdemo.png">
 
 
 
@@ -378,7 +381,16 @@
       
 
       
-        
+        <p>写这篇的初衷是因为觉得自己在工作中很多技术的实现都是重复的，或者是换工作了之后，或者是下一个项目，总之，有些轮子自己已经造过一次了，就应该让它们沉淀下来，再后面项目使用的时候可以直接使用，或者再进行优化使其更加灵活和更方便应用，这也是一种自己对技术的沉淀和思考的过程。我有同事说有些轮子别人造好了就没必要自己再写了，我一定程度上赞同这个说法，但是就自己本身的技术沉淀来说我是不赞同的。当然，别人造了轮子，也一直在维护，而且项目刚好又在适用范围，于一个非研发类的公司来说，效率就是一切（国内基本是996堆砌的效率😂）。</p>
+<h2 id="废话不多说，以下是正题："><a href="#废话不多说，以下是正题：" class="headerlink" title="废话不多说，以下是正题："></a>废话不多说，以下是正题：</h2><h3 id="先看看-Cocoapods-的官方文档"><a href="#先看看-Cocoapods-的官方文档" class="headerlink" title="先看看 Cocoapods 的官方文档"></a>先看看 Cocoapods 的官方文档</h3><p>进入 <a href="https://cocoapods.org" target="_blank" rel="noopener">cocoapods</a> 官网,选择 <code>CREATE A POD</code> 。可以看到官网已经告诉我们如何生成自己的pod 了，很简单的几句代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pod spec create Peanut</span><br><span class="line">$ edit Peanut.podspec</span><br><span class="line">$ pod spec lint Peanut.podspec</span><br></pre></td></tr></table></figure>
+<p>解释： </p>
+<h4 id="创建-pod-spec-create"><a href="#创建-pod-spec-create" class="headerlink" title="创建 pod spec create ***"></a>创建 <code>pod spec create ***</code></h4><p>创建一个 pod 所需的 spec 文件，命名为 ***</p>
+<h4 id="编辑-edit-podspec"><a href="#编辑-edit-podspec" class="headerlink" title="编辑 edit ***.podspec"></a>编辑 <code>edit ***.podspec</code></h4><p>编辑 上一步所生成的 podspec 文件<br>podspec 文件长这样：<br><img src="/2019/03/01/配置自己的Pod库/podSepecdemo.png" alt="podspec"><br>这里面的语法应该都能看懂，等号左边是 spec 需要设置的属性，等号右边是对应值，如果该属性只是字符串 则使用 <code>&#39;&#39;</code> 单引号，注意：一定是要<code>单引号</code>；如果该属性值是个对象（类似于字典），则需要指向对象字段与值，样子和字典差不错，唯一的差别就是：字段前面加个冒号，然后双箭头指向字段值，注意这里的字段值字符串也是需要使用<code>单引号</code></p>
+<p>以下是对podspec 的简单配置，更多功能还有待探索<br><img src="/2019/03/01/配置自己的Pod库/podspec文件.png" alt="podspecdemo"></p>
+<h4 id="推送-pod-spec-lint-podspec"><a href="#推送-pod-spec-lint-podspec" class="headerlink" title="推送 pod spec lint ***.podspec"></a>推送 <code>pod spec lint ***.podspec</code></h4><p>最后的最后，当以上准备就绪，需要将 podspec 推送至 cocoapods 库那边，这样它们才会识别你这个库。<br>这里需要注意的一点是，如果没有创建 cocoapods 的账号，在这一步需要先创建一个 cocoapods 的账号才能进行推送，以上官网给出的推送命令是经过改进的，会在正真推送之前进行有效性验证，如果验证不通过是无法完成推送的，如果提示验证不通过，根据提示进行完善即可，一般不会太麻烦。<br>创建cocoapods 账号：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pod trunk register &lt;your email address&gt; &apos;&lt;your nickname&gt;&apos; --description=&apos;macbook air&apos;</span><br></pre></td></tr></table></figure>
+<h3 id="以上"><a href="#以上" class="headerlink" title="以上"></a>以上</h3>
       
     </div>
 
@@ -462,8 +474,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -478,7 +499,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -517,7 +538,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
@@ -552,6 +575,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#废话不多说，以下是正题："><span class="nav-number">1.</span> <span class="nav-text">废话不多说，以下是正题：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先看看-Cocoapods-的官方文档"><span class="nav-number">1.1.</span> <span class="nav-text">先看看 Cocoapods 的官方文档</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建-pod-spec-create"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建 pod spec create ***</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编辑-edit-podspec"><span class="nav-number">1.1.2.</span> <span class="nav-text">编辑 edit ***.podspec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推送-pod-spec-lint-podspec"><span class="nav-number">1.1.3.</span> <span class="nav-text">推送 pod spec lint ***.podspec</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以上"><span class="nav-number">1.2.</span> <span class="nav-text">以上</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="这宇宙光明只是瞬间 黑暗才是永恒 但 正因为那瞬间的光明 人生才有了追求与希望 而，遇到你 是我最大的幸福   --致Miss原">
-<meta name="keywords" content="机器学习">
+  <meta name="description" content="12345678910111213[self.view addSubview:self.baseScroller];    [self.baseScroller mas_makeConstraints:^(MASConstraintMaker *make) &amp;#123;        make.left.right.bottom.mas_equalTo(0);        make.top.ma">
+<meta name="keywords" content="化十,IT">
 <meta property="og:type" content="article">
-<meta property="og:title" content=" 机器学习体验">
-<meta property="og:url" content="https://www.weilni.cn/2018/12/06/机器学习体验/index.html">
+<meta property="og:title" content="关于AutoLayout的一些非常规布局">
+<meta property="og:url" content="https://www.weilni.cn/2019/04/09/关于AutoLayout的一些非常规布局/index.html">
 <meta property="og:site_name" content="化十">
-<meta property="og:description" content="这宇宙光明只是瞬间 黑暗才是永恒 但 正因为那瞬间的光明 人生才有了追求与希望 而，遇到你 是我最大的幸福   --致Miss原">
+<meta property="og:description" content="12345678910111213[self.view addSubview:self.baseScroller];    [self.baseScroller mas_makeConstraints:^(MASConstraintMaker *make) &amp;#123;        make.left.right.bottom.mas_equalTo(0);        make.top.ma">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-25T10:46:39.408Z">
+<meta property="og:updated_time" content="2019-04-09T06:39:52.484Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content=" 机器学习体验">
-<meta name="twitter:description" content="这宇宙光明只是瞬间 黑暗才是永恒 但 正因为那瞬间的光明 人生才有了追求与希望 而，遇到你 是我最大的幸福   --致Miss原">
+<meta name="twitter:title" content="关于AutoLayout的一些非常规布局">
+<meta name="twitter:description" content="12345678910111213[self.view addSubview:self.baseScroller];    [self.baseScroller mas_makeConstraints:^(MASConstraintMaker *make) &amp;#123;        make.left.right.bottom.mas_equalTo(0);        make.top.ma">
 
 
 
 
 
 
-  <link rel="canonical" href="https://www.weilni.cn/2018/12/06/机器学习体验/">
+  <link rel="canonical" href="https://www.weilni.cn/2019/04/09/关于AutoLayout的一些非常规布局/">
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title> 机器学习体验 | 化十</title>
+  <title>关于AutoLayout的一些非常规布局 | 化十</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.weilni.cn/2018/12/06/机器学习体验/">
+    <link itemprop="mainEntityOfPage" href="https://www.weilni.cn/2019/04/09/关于AutoLayout的一些非常规布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="化十 • Kenway">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"> 机器学习体验
+          <h1 class="post-title" itemprop="name headline">关于AutoLayout的一些非常规布局
               
             
           </h1>
@@ -337,7 +337,7 @@
                 
               
 
-              <time title="创建时间：2018-12-06 02:23:30" itemprop="dateCreated datePublished" datetime="2018-12-06T02:23:30+08:00">2018-12-06</time>
+              <time title="创建时间：2019-04-09 14:36:07" itemprop="dateCreated datePublished" datetime="2019-04-09T14:36:07+08:00">2019-04-09</time>
             
 
             
@@ -378,7 +378,7 @@
       
 
       
-        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[self.view addSubview:self.baseScroller];</span><br><span class="line">    [self.baseScroller mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">        make.left.right.bottom.mas_equalTo(0);</span><br><span class="line">        make.top.mas_equalTo(40);</span><br><span class="line">    &#125;];</span><br><span class="line">    </span><br><span class="line">    [self.baseScroller addSubview:self.contentView];</span><br><span class="line">    CGFloat width = [UIScreen mainScreen].bounds.size.width;</span><br><span class="line">    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">        make.edges.mas_equalTo(self.baseScroller);</span><br><span class="line">        make.width.mas_equalTo(width * 3);</span><br><span class="line">        make.height.mas_equalTo(self.baseScroller);</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -396,12 +396,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
-          
-        </div>
-      
 
       
       
@@ -411,8 +405,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/24/iOS自定义全局悬浮控件/" rel="next" title="iOS自定义全局悬浮控件">
-                <i class="fa fa-chevron-left"></i> iOS自定义全局悬浮控件
+              <a href="/2019/03/25/Git的常用命令集/" rel="next" title="Git的常用命令集">
+                <i class="fa fa-chevron-left"></i> Git的常用命令集
               </a>
             
           </div>
@@ -421,8 +415,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/01/配置自己的Pod库/" rel="prev" title="配置自己的Pod库">
-                配置自己的Pod库 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/17/关于嵌套scrollView的联动封装的思考/" rel="prev" title="关于嵌套scrollView的联动封装的思考">
+                关于嵌套scrollView的联动封装的思考 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

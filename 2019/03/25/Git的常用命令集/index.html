@@ -108,25 +108,29 @@
 
 
 
-  <meta name="description" content="这宇宙光明只是瞬间 黑暗才是永恒 但 正因为那瞬间的光明 人生才有了追求与希望 而，遇到你 是我最大的幸福   --致Miss原">
-<meta name="keywords" content="机器学习">
+  <meta name="description" content="不定期更新  由于日常经常使用 git 作为源码管理工具处理版本迭代的事宜，而且日常使用 Terminal 直接敲命令的多，或多或少会遇到一些不太熟悉的 git 命令，因此将其统一记录，方便自己熟悉以及归档使用。 删除服务端分支（慎用） git push origin --delete &amp;lt;branch name&amp;gt;   修改当前分支commit历史的备注 修改最近一次的 commit">
+<meta name="keywords" content="Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content=" 机器学习体验">
-<meta property="og:url" content="https://www.weilni.cn/2018/12/06/机器学习体验/index.html">
+<meta property="og:title" content="Git的常用命令集">
+<meta property="og:url" content="https://www.weilni.cn/2019/03/25/Git的常用命令集/index.html">
 <meta property="og:site_name" content="化十">
-<meta property="og:description" content="这宇宙光明只是瞬间 黑暗才是永恒 但 正因为那瞬间的光明 人生才有了追求与希望 而，遇到你 是我最大的幸福   --致Miss原">
+<meta property="og:description" content="不定期更新  由于日常经常使用 git 作为源码管理工具处理版本迭代的事宜，而且日常使用 Terminal 直接敲命令的多，或多或少会遇到一些不太熟悉的 git 命令，因此将其统一记录，方便自己熟悉以及归档使用。 删除服务端分支（慎用） git push origin --delete &amp;lt;branch name&amp;gt;   修改当前分支commit历史的备注 修改最近一次的 commit">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-25T10:46:39.408Z">
+<meta property="og:image" content="https://www.weilni.cn/2019/03/25/Git的常用命令集/delete_remote_branch.png">
+<meta property="og:image" content="https://www.weilni.cn/2019/03/25/Git的常用命令集/rebase1.png">
+<meta property="og:image" content="https://www.weilni.cn/2019/03/25/Git的常用命令集/rebase2.png">
+<meta property="og:updated_time" content="2019-04-09T06:29:37.916Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content=" 机器学习体验">
-<meta name="twitter:description" content="这宇宙光明只是瞬间 黑暗才是永恒 但 正因为那瞬间的光明 人生才有了追求与希望 而，遇到你 是我最大的幸福   --致Miss原">
+<meta name="twitter:title" content="Git的常用命令集">
+<meta name="twitter:description" content="不定期更新  由于日常经常使用 git 作为源码管理工具处理版本迭代的事宜，而且日常使用 Terminal 直接敲命令的多，或多或少会遇到一些不太熟悉的 git 命令，因此将其统一记录，方便自己熟悉以及归档使用。 删除服务端分支（慎用） git push origin --delete &amp;lt;branch name&amp;gt;   修改当前分支commit历史的备注 修改最近一次的 commit">
+<meta name="twitter:image" content="https://www.weilni.cn/2019/03/25/Git的常用命令集/delete_remote_branch.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://www.weilni.cn/2018/12/06/机器学习体验/">
+  <link rel="canonical" href="https://www.weilni.cn/2019/03/25/Git的常用命令集/">
 
 
 
@@ -136,7 +140,7 @@
   };
 </script>
 
-  <title> 机器学习体验 | 化十</title>
+  <title>Git的常用命令集 | 化十</title>
   
 
 
@@ -295,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.weilni.cn/2018/12/06/机器学习体验/">
+    <link itemprop="mainEntityOfPage" href="https://www.weilni.cn/2019/03/25/Git的常用命令集/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="化十 • Kenway">
@@ -312,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"> 机器学习体验
+          <h1 class="post-title" itemprop="name headline">Git的常用命令集
               
             
           </h1>
@@ -337,7 +341,7 @@
                 
               
 
-              <time title="创建时间：2018-12-06 02:23:30" itemprop="dateCreated datePublished" datetime="2018-12-06T02:23:30+08:00">2018-12-06</time>
+              <time title="创建时间：2019-03-25 19:17:38" itemprop="dateCreated datePublished" datetime="2019-03-25T19:17:38+08:00">2019-03-25</time>
             
 
             
@@ -378,7 +382,35 @@
       
 
       
-        
+        <blockquote>
+<p>不定期更新</p>
+</blockquote>
+<p>由于日常经常使用 <code>git</code> 作为源码管理工具处理版本迭代的事宜，而且日常使用 Terminal 直接敲命令的多，或多或少会遇到一些不太熟悉的 <code>git</code> 命令，因此将其统一记录，方便自己熟悉以及归档使用。</p>
+<h3 id="删除服务端分支（慎用）"><a href="#删除服务端分支（慎用）" class="headerlink" title="删除服务端分支（慎用）"></a>删除服务端分支（慎用）</h3><blockquote>
+<pre><code>git push origin --delete &lt;branch name&gt;
+</code></pre><p><img src="/2019/03/25/Git的常用命令集/delete_remote_branch.png" alt="delete remote branch"></p>
+</blockquote>
+<h3 id="修改当前分支commit历史的备注"><a href="#修改当前分支commit历史的备注" class="headerlink" title="修改当前分支commit历史的备注"></a>修改当前分支<code>commit</code>历史的备注</h3><ol>
+<li>修改最近一次的 commit</li>
+</ol>
+<blockquote>
+<pre><code>git commit --amend
+</code></pre></blockquote>
+<ol start="2">
+<li>修改多条 commit 记录</li>
+</ol>
+<blockquote>
+<p>   如修改前两条 commit 记录</p>
+<pre><code>1. git rebase -i HEAD~2 
+2. 修改 想要修改备注的commit id 前的pick 为 edit 
+3. :wq 退出编辑
+4. git commit --amend
+5. 编辑备注
+6. :wq
+7. git rebase --continue
+</code></pre><p><img src="/2019/03/25/Git的常用命令集/rebase1.png" alt="rebase1"><br><img src="/2019/03/25/Git的常用命令集/rebase2.png" alt="rebase1"></p>
+</blockquote>
+
       
     </div>
 
@@ -398,7 +430,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+            <a href="/tags/Git/" rel="tag"># Git</a>
           
         </div>
       
@@ -411,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/24/iOS自定义全局悬浮控件/" rel="next" title="iOS自定义全局悬浮控件">
-                <i class="fa fa-chevron-left"></i> iOS自定义全局悬浮控件
+              <a href="/2019/03/23/关于Github屏蔽百度爬虫的SEO爬坑历程/" rel="next" title="关于Github屏蔽百度爬虫的SEO爬坑历程">
+                <i class="fa fa-chevron-left"></i> 关于Github屏蔽百度爬虫的SEO爬坑历程
               </a>
             
           </div>
@@ -421,8 +453,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/01/配置自己的Pod库/" rel="prev" title="配置自己的Pod库">
-                配置自己的Pod库 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/09/关于AutoLayout的一些非常规布局/" rel="prev" title="关于AutoLayout的一些非常规布局">
+                关于AutoLayout的一些非常规布局 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -468,8 +500,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -560,6 +601,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除服务端分支（慎用）"><span class="nav-number">1.</span> <span class="nav-text">删除服务端分支（慎用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改当前分支commit历史的备注"><span class="nav-number">2.</span> <span class="nav-text">修改当前分支commit历史的备注</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

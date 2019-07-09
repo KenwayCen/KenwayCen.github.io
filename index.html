@@ -295,6 +295,439 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.weilni.cn/2019/04/17/关于嵌套scrollView的联动封装的思考/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="化十 • Kenway">
+      <meta itemprop="description" content="这宇宙光明只是瞬间 <br>黑暗才是永恒 <br>但 <br>正因为那瞬间的光明 <br>人生才有了追求与希望 <br>而，遇到你 <br>是我最大的幸福 <br>  --致Miss原">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="化十">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/17/关于嵌套scrollView的联动封装的思考/" itemprop="url">
+                  关于嵌套scrollView的联动封装的思考
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-17 14:54:13" itemprop="dateCreated datePublished" datetime="2019-04-17T14:54:13+08:00">2019-04-17</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.weilni.cn/2019/04/09/关于AutoLayout的一些非常规布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="化十 • Kenway">
+      <meta itemprop="description" content="这宇宙光明只是瞬间 <br>黑暗才是永恒 <br>但 <br>正因为那瞬间的光明 <br>人生才有了追求与希望 <br>而，遇到你 <br>是我最大的幸福 <br>  --致Miss原">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="化十">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/09/关于AutoLayout的一些非常规布局/" itemprop="url">
+                  关于AutoLayout的一些非常规布局
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-09 14:36:07" itemprop="dateCreated datePublished" datetime="2019-04-09T14:36:07+08:00">2019-04-09</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[self.view addSubview:self.baseScroller];</span><br><span class="line">    [self.baseScroller mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">        make.left.right.bottom.mas_equalTo(0);</span><br><span class="line">        make.top.mas_equalTo(40);</span><br><span class="line">    &#125;];</span><br><span class="line">    </span><br><span class="line">    [self.baseScroller addSubview:self.contentView];</span><br><span class="line">    CGFloat width = [UIScreen mainScreen].bounds.size.width;</span><br><span class="line">    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">        make.edges.mas_equalTo(self.baseScroller);</span><br><span class="line">        make.width.mas_equalTo(width * 3);</span><br><span class="line">        make.height.mas_equalTo(self.baseScroller);</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.weilni.cn/2019/03/25/Git的常用命令集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="化十 • Kenway">
+      <meta itemprop="description" content="这宇宙光明只是瞬间 <br>黑暗才是永恒 <br>但 <br>正因为那瞬间的光明 <br>人生才有了追求与希望 <br>而，遇到你 <br>是我最大的幸福 <br>  --致Miss原">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="化十">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/25/Git的常用命令集/" itemprop="url">
+                  Git的常用命令集
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-25 19:17:38" itemprop="dateCreated datePublished" datetime="2019-03-25T19:17:38+08:00">2019-03-25</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>不定期更新</p>
+</blockquote>
+<p>由于日常经常使用 <code>git</code> 作为源码管理工具处理版本迭代的事宜，而且日常使用 Terminal 直接敲命令的多，或多或少会遇到一些不太熟悉的 <code>git</code> 命令，因此将其统一记录，方便自己熟悉以及归档使用。</p>
+<h3 id="删除服务端分支（慎用）"><a href="#删除服务端分支（慎用）" class="headerlink" title="删除服务端分支（慎用）"></a>删除服务端分支（慎用）</h3><blockquote>
+<pre><code>git push origin --delete &lt;branch name&gt;
+</code></pre><p><img src="/2019/03/25/Git的常用命令集/delete_remote_branch.png" alt="delete remote branch"></p>
+</blockquote>
+<h3 id="修改当前分支commit历史的备注"><a href="#修改当前分支commit历史的备注" class="headerlink" title="修改当前分支commit历史的备注"></a>修改当前分支<code>commit</code>历史的备注</h3><ol>
+<li>修改最近一次的 commit</li>
+</ol>
+<blockquote>
+<pre><code>git commit --amend
+</code></pre></blockquote>
+<ol start="2">
+<li>修改多条 commit 记录</li>
+</ol>
+<blockquote>
+<p>   如修改前两条 commit 记录</p>
+<pre><code>1. git rebase -i HEAD~2 
+2. 修改 想要修改备注的commit id 前的pick 为 edit 
+3. :wq 退出编辑
+4. git commit --amend
+5. 编辑备注
+6. :wq
+7. git rebase --continue
+</code></pre><p><img src="/2019/03/25/Git的常用命令集/rebase1.png" alt="rebase1"><br><img src="/2019/03/25/Git的常用命令集/rebase2.png" alt="rebase1"></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.weilni.cn/2019/03/23/关于Github屏蔽百度爬虫的SEO爬坑历程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -686,7 +1119,16 @@
       
         
           
-            
+            <p>写这篇的初衷是因为觉得自己在工作中很多技术的实现都是重复的，或者是换工作了之后，或者是下一个项目，总之，有些轮子自己已经造过一次了，就应该让它们沉淀下来，再后面项目使用的时候可以直接使用，或者再进行优化使其更加灵活和更方便应用，这也是一种自己对技术的沉淀和思考的过程。我有同事说有些轮子别人造好了就没必要自己再写了，我一定程度上赞同这个说法，但是就自己本身的技术沉淀来说我是不赞同的。当然，别人造了轮子，也一直在维护，而且项目刚好又在适用范围，于一个非研发类的公司来说，效率就是一切（国内基本是996堆砌的效率😂）。</p>
+<h2 id="废话不多说，以下是正题："><a href="#废话不多说，以下是正题：" class="headerlink" title="废话不多说，以下是正题："></a>废话不多说，以下是正题：</h2><h3 id="先看看-Cocoapods-的官方文档"><a href="#先看看-Cocoapods-的官方文档" class="headerlink" title="先看看 Cocoapods 的官方文档"></a>先看看 Cocoapods 的官方文档</h3><p>进入 <a href="https://cocoapods.org" target="_blank" rel="noopener">cocoapods</a> 官网,选择 <code>CREATE A POD</code> 。可以看到官网已经告诉我们如何生成自己的pod 了，很简单的几句代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pod spec create Peanut</span><br><span class="line">$ edit Peanut.podspec</span><br><span class="line">$ pod spec lint Peanut.podspec</span><br></pre></td></tr></table></figure>
+<p>解释： </p>
+<h4 id="创建-pod-spec-create"><a href="#创建-pod-spec-create" class="headerlink" title="创建 pod spec create ***"></a>创建 <code>pod spec create ***</code></h4><p>创建一个 pod 所需的 spec 文件，命名为 ***</p>
+<h4 id="编辑-edit-podspec"><a href="#编辑-edit-podspec" class="headerlink" title="编辑 edit ***.podspec"></a>编辑 <code>edit ***.podspec</code></h4><p>编辑 上一步所生成的 podspec 文件<br>podspec 文件长这样：<br><img src="/2019/03/01/配置自己的Pod库/podSepecdemo.png" alt="podspec"><br>这里面的语法应该都能看懂，等号左边是 spec 需要设置的属性，等号右边是对应值，如果该属性只是字符串 则使用 <code>&#39;&#39;</code> 单引号，注意：一定是要<code>单引号</code>；如果该属性值是个对象（类似于字典），则需要指向对象字段与值，样子和字典差不错，唯一的差别就是：字段前面加个冒号，然后双箭头指向字段值，注意这里的字段值字符串也是需要使用<code>单引号</code></p>
+<p>以下是对podspec 的简单配置，更多功能还有待探索<br><img src="/2019/03/01/配置自己的Pod库/podspec文件.png" alt="podspecdemo"></p>
+<h4 id="推送-pod-spec-lint-podspec"><a href="#推送-pod-spec-lint-podspec" class="headerlink" title="推送 pod spec lint ***.podspec"></a>推送 <code>pod spec lint ***.podspec</code></h4><p>最后的最后，当以上准备就绪，需要将 podspec 推送至 cocoapods 库那边，这样它们才会识别你这个库。<br>这里需要注意的一点是，如果没有创建 cocoapods 的账号，在这一步需要先创建一个 cocoapods 的账号才能进行推送，以上官网给出的推送命令是经过改进的，会在正真推送之前进行有效性验证，如果验证不通过是无法完成推送的，如果提示验证不通过，根据提示进行完善即可，一般不会太麻烦。<br>创建cocoapods 账号：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pod trunk register &lt;your email address&gt; &apos;&lt;your nickname&gt;&apos; --description=&apos;macbook air&apos;</span><br></pre></td></tr></table></figure>
+<h3 id="以上"><a href="#以上" class="headerlink" title="以上"></a>以上</h3>
           
         
       
@@ -1349,506 +1791,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-Blog" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.weilni.cn/2018/10/18/Github-Hexo博客SEO优化/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="化十 • Kenway">
-      <meta itemprop="description" content="这宇宙光明只是瞬间 <br>黑暗才是永恒 <br>但 <br>正因为那瞬间的光明 <br>人生才有了追求与希望 <br>而，遇到你 <br>是我最大的幸福 <br>  --致Miss原">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="化十">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/18/Github-Hexo博客SEO优化/" itemprop="url">
-                  Github+Hexo博客SEO优化
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-18 11:12:56" itemprop="dateCreated datePublished" datetime="2018-10-18T11:12:56+08:00">2018-10-18</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>利用 github pages 搭建好自己的博客之后，最好自己买个域名解析过来，github 是屏蔽百度的爬虫的，也就是说，你辛苦的搭建起来的博客除了你自己并没有人看得到。所以我们需要进行一些优化，能够让百度搜索引擎搜得到，这样自己写的博客才有某种意义。</p>
-<h3 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h3><p>去域名服务商那边购买一个自己的域名，也不贵，也就几十块钱，遇上打折的时候可能就几块，十几块。</p>
-<h4 id="域名管理后台的解析配置"><a href="#域名管理后台的解析配置" class="headerlink" title="域名管理后台的解析配置"></a>域名管理后台的解析配置</h4><ul>
-<li><a href="https://cloud.tencent.com/act/domainsales?fromSource=gwzcw.1096427.1096427.1096427" target="_blank" rel="noopener">腾讯云域名购买</a></li>
-<li><a href="https://wanwang.aliyun.com/domain/?spm=5176.8006371.772227.ymzc.20557e6387cxnM" target="_blank" rel="noopener">阿里旗下的万网域名购买</a></li>
-</ul>
-<blockquote>
-<p>我是从腾讯那边注册的域名，下面以腾讯的域名管理为例，其他平台的都异曲同工</p>
-</blockquote>
-<p>购买域名后进入管理后台，将 github pages 那边的目录添加解析</p>
-<ul>
-<li><em>域名解析列表☞域名☞操作[解析]</em><br><img src="/2018/10/18/Github-Hexo博客SEO优化/解析列表.jpg" alt="解析列表"></li>
-<li>在记录列表<strong><code>添加记录</code></strong> ☞<ul>
-<li>主机记录： <strong><code>www</code></strong></li>
-<li>记录类型： <strong><code>CNAME</code></strong></li>
-<li>记录值： github pages上原来分配的访问地址去掉<code>https://</code>。如：<code>https://excample.github.io</code> ,则记录值填写<strong><code>excample.github.io</code></strong>。其余的值默认，保存即可<br><img src="/2018/10/18/Github-Hexo博客SEO优化/添加解析记录.jpg" alt="添加解析记录"></li>
-</ul>
-</li>
-</ul>
-<h4 id="github-pages博客仓库的Settings的配置"><a href="#github-pages博客仓库的Settings的配置" class="headerlink" title="github pages博客仓库的Settings的配置"></a>github pages博客仓库的<code>Settings</code>的配置</h4><p>github pages 这边的配置就比较简单了，在<code>Settings</code>配置页面<br><strong>Github Pages☞Custom domain</strong><br>然后在<code>Custom domain</code> 中填入 腾讯那边注册购买的域名,点击 <code>Save</code></p>
-<blockquote>
-<p><a href="http://www.weilni.cn">www.weilni.cn</a></p>
-</blockquote>
-<p><img src="/2018/10/18/Github-Hexo博客SEO优化/github-pages-settings.png" alt="Github Pages 自定义域名配置"><br>上面配置好之后可以看到 github 仓库上会多了一个 <code>CNAME</code>的文件，内容显示：<a href="http://www.weilni.cn">www.weilni.cn</a>，即刚刚配置上去的域名↓↓<br><img src="/2018/10/18/Github-Hexo博客SEO优化/CNAME-1.png" alt="CNAME-1"><br><img src="/2018/10/18/Github-Hexo博客SEO优化/CNAME-2.png" alt="CNAME-2"><br>至此，自定义域名的解析以及配置完成，等上10来分钟就可以用自定义的域名进行自己博客的访问了。但是这只是自定义域名与 github pages 那边的绑定解析关系，Hexo 并未进行处理，因此接下来还要对 Hexo 进行简单的配置，保证之后写的文章提交时不会影响自定义域名的解析。</p>
-<h4 id="自定义域名Hexo的配置"><a href="#自定义域名Hexo的配置" class="headerlink" title="自定义域名Hexo的配置"></a>自定义域名Hexo的配置</h4><p>Hexo 这边的配置也比较简单，就是将<code>CNAME</code>文件放到博客的<code>source</code>（注意不是主题里边的 source）目录下即可，然后用命令行进行生成和部署<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
-<p>以上，自定义域名的配置全部完成了，以后的文章的编写也不会影响自定义域名的解析了。</p>
-<h3 id="添加百度统计"><a href="#添加百度统计" class="headerlink" title="添加百度统计"></a>添加百度统计</h3><h4 id="百度统计管理后台配置"><a href="#百度统计管理后台配置" class="headerlink" title="百度统计管理后台配置"></a>百度统计管理后台配置</h4><h5 id="添加自己的网站"><a href="#添加自己的网站" class="headerlink" title="添加自己的网站"></a>添加自己的网站</h5><p>到<a href="https://tongji.baidu.com/web/welcome/login" target="_blank" rel="noopener">百度统计</a>注册<code>百度统计-站长版</code>。<br>注册后，进入百度统计的<code>管理</code>菜单依次找到</p>
-<blockquote>
-<p>网站列表☞自有网站☞新建网站</p>
-</blockquote>
-<p>将自己的博客站点添加进去，添加的时候直接添加自定的域名<br><img src="/2018/10/18/Github-Hexo博客SEO优化/百度统计管理后台-新建站点.png" alt="添加网站"></p>
-<h5 id="获取百度统计ID"><a href="#获取百度统计ID" class="headerlink" title="获取百度统计ID"></a>获取百度统计ID</h5><p>将自己的网站添加到百度统计之后，找到一下菜单，获取百度统计提供的<code>ID</code></p>
-<blockquote>
-<p>代码管理☞代码获取</p>
-</blockquote>
-<p>在代码中找到<code>hm.src=&quot;https://hm.baidu.com/hm.js?****&quot;</code>，这个 <code>****</code>就是我们需要获取的百度统计的 <code>ID</code><br><img src="/2018/10/18/Github-Hexo博客SEO优化/get-baidu-analytics-id.png" alt="获取百度统计ID"></p>
-<h4 id="百度统计Hexo的配置"><a href="#百度统计Hexo的配置" class="headerlink" title="百度统计Hexo的配置"></a>百度统计Hexo的配置</h4><p>在 主题文件夹下打开 <code>_config.yml</code> 文件，找到<code>Baidu Analytics</code>，将百度统计的 ID 配置上去就 ok了<br><img src="/2018/10/18/Github-Hexo博客SEO优化/百度统计hexo的配置.png" alt="百度统计Hexo的配置"><br>配置后用 Hexo命令进行生成页面与部署到 github 服务器上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
-<p>然后去百度统计的管理后台进行验证代码，验证成功后就算是配置完成了。<br><img src="/2018/10/18/Github-Hexo博客SEO优化/验证代码.png" alt="验证代码"><br>以上，百度统计的相关配置已经完成，等上一段时间，再进入百度统计的个人中心即可查看的相关统计数据了。<br><img src="/2018/10/18/Github-Hexo博客SEO优化/百度统计数据报表.png" alt="百度统计数据报表"></p>
-<h3 id="添加-sitemap"><a href="#添加-sitemap" class="headerlink" title="添加 sitemap"></a>添加 sitemap</h3><h4 id="1、安装-hexo-sitemap-插件"><a href="#1、安装-hexo-sitemap-插件" class="headerlink" title="1、安装 hexo sitemap 插件"></a>1、安装 hexo sitemap 插件</h4><ul>
-<li>在 Terminal 执行以下命令</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-sitemap --save</span><br><span class="line">$ npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/10/18/Github-Hexo博客SEO优化/sitemap1.png" alt="hexo-sitemap插件"></p>
-<ul>
-<li>将站点配置文件[<code>根目录的_config.yml</code>]中的 url 改成自己的站点访问地址</li>
-</ul>
-<p><img src="/2018/10/18/Github-Hexo博客SEO优化/config_url.png" alt="config_url"></p>
-<h4 id="2、向百度提交链接"><a href="#2、向百度提交链接" class="headerlink" title="2、向百度提交链接"></a>2、向百度提交链接</h4><p>选择主动推送：主动推送要比自动推送以及 sitemap 时效性高</p>
-<ul>
-<li>主动推送</li>
-</ul>
-<p>安装 百度链接提交 hexo 插件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-baidu-url-submit --save</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/10/18/Github-Hexo博客SEO优化/submit_baidu.png" alt="baidu_submit"></p>
-<p>安装好插件后，在站点配置文件<code>_config.yml</code>配置站点的新字段：说明主动图送 链接提交的相关配置<br><img src="/2018/10/18/Github-Hexo博客SEO优化/baidusubmiturl.png" alt="配置链接提交"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">baidu_url_submit:</span><br><span class="line">  count: 1000 ## 提交最新的一个链接</span><br><span class="line">  host: alili.tech ## 在百度站长平台中注册的域名</span><br><span class="line">  token: xxxxx ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!</span><br><span class="line">  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里</span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">- type: baidu_url_submitter # 百度</span><br><span class="line">- type: baidu_xz_url_submitter # 百度熊掌号</span><br></pre></td></tr></table></figure>
-<p>配置后，还需要在站点配置文件<code>_config.yml</code>的 deploy: 字段下多添加一个以上配置的百度链接提交的配置类型<br><img src="/2018/10/18/Github-Hexo博客SEO优化/deployconfig1.png" alt="配置添加发布类型"><br><img src="/2018/10/18/Github-Hexo博客SEO优化/deployconfig2.png" alt="配置添加发布类型"></p>
-<blockquote>
-<p><strong>注意</strong>: </p>
-<ul>
-<li><p>baidu_url_submit:配置一定要写这个名称，这是定式，否则【hexo g 会报错】</p>
-</li>
-<li><p>deploy：字段配置一定是 这个名称 <code>baidu_url_submitter</code>定式，否则会提交不成功</p>
-</li>
-</ul>
-</blockquote>
-<p>以上配置完成后，只要每次 发布站点<code>hexo d</code> 新链接就会被推送到百度搜索上了</p>
-<p>接下就可以在编辑文章，生成静态文件后，然后 <code>hexo d</code></p>
-<p><img src="/2018/10/18/Github-Hexo博客SEO优化/url_submit.png" alt="主动推送"></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.weilni.cn/2018/10/12/Hexo-在新机器上继续写博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="化十 • Kenway">
-      <meta itemprop="description" content="这宇宙光明只是瞬间 <br>黑暗才是永恒 <br>但 <br>正因为那瞬间的光明 <br>人生才有了追求与希望 <br>而，遇到你 <br>是我最大的幸福 <br>  --致Miss原">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="化十">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/12/Hexo-在新机器上继续写博客/" itemprop="url">
-                  Hexo 在新机器上继续写博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-12 13:58:00" itemprop="dateCreated datePublished" datetime="2018-10-12T13:58:00+08:00">2018-10-12</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>很多时候我们搭建一个 Hexo 框架写博客，我们基本上都会在搭建的机器进行后续的博客编写。但是，假如以后换了一台新机器，或者原来写博客的机器被不可名状的系统更新后或者环境更新后出错了，写不了，是否需要考虑将原来博客的风格以及个性主题保留下来呢？所以就有了这篇文章。关于 Hexo的首次搭建相关的网上已经有很多相关讨论了，至于后续的这种更新迭代框架使用比较缺少，在这里记录一下自己的摸索后的相关资料内容，仅供本人参考。<br>在第一次搭建好 hexo 后，需要将站点的以下文件保存（上传到 github 上）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">package.json</span><br><span class="line">scaffolds</span><br><span class="line">source</span><br><span class="line">themes</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/10/12/Hexo-在新机器上继续写博客/第一次部署Hexo需保留的文件.png" alt="Hexo首次配置成功后需要保留的文件"></p>
-<p>我之前的 github 博客搭建中已经将 博客的元数据也上传至 github 同一个仓库下的独立分支内方便去到新环境新机器的时候可以保证博客相关的配置。<br><code>主题</code>也进行个性化处理放到了 github 上<br><a href="https://github.com/KenwayCen/hexo-theme-next" target="_blank" rel="noopener">化十博客的主题</a></p>
-<p>所以当在新机器里编写博客的时候就需要进行以下几个步骤了。</p>
-<h4 id="博客元数据下载"><a href="#博客元数据下载" class="headerlink" title="博客元数据下载"></a>博客元数据下载</h4><ul>
-<li>clone github 上的博客元数据</li>
-<li>进入 themes/next 文件夹，将<a href="https://github.com/KenwayCen/hexo-theme-next" target="_blank" rel="noopener">化十博客的主题</a>也 clone 下来 放到 next里，<code>ps:不要改 next目录的名称，只要将主题的所有内容放到 next 目录内</code>。<br><img src="/2018/10/12/Hexo-在新机器上继续写博客/将博客主题的所有文件放到next目录.png" alt><br>至此，博客的元数据已经完全准备好了，下面就是和第一次配置 hexo后写博客一样的过程了，需要简单的几个命令配置一下 hexo 的相关支撑插件</li>
-</ul>
-<h4 id="初始化及配置相关插件"><a href="#初始化及配置相关插件" class="headerlink" title="初始化及配置相关插件"></a>初始化及配置相关插件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br><span class="line">//以下是插入图片时所需的插件</span><br><span class="line">$ npm install hexo-asset-image --save</span><br><span class="line">//部署 到 git（github）上的插件</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">// sitemap 插件</span><br><span class="line">$ npm install hexo-generator-sitemap --save</span><br><span class="line">$ npm install hexo-generator-baidu-sitemap --save</span><br><span class="line">// 百度提交链接主动提交插件</span><br><span class="line">$ npm install hexo-baidu-url-submit --save</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>为了方便，可以讲需要安装的 npm 库 放到 package.json 中，这样就不需要每装一个库，就敲一行代码了,<br>只需要 </p>
-<pre><code>$ npm install
-</code></pre><p><img src="/2018/10/12/Hexo-在新机器上继续写博客/package.png" alt="package"></p>
-</blockquote>
-<p>以上安装过程，如果有打印需要 <code>fix</code> 的内容，请根据控制台输入的提示进行 <code>fix</code>。<br>如：<br><img src="/2018/10/12/Hexo-在新机器上继续写博客/fix插件安装时的内容.png" alt="fix插件安装时的内容"><br>根据提示，执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm audit fix</span><br></pre></td></tr></table></figure></p>
-<h4 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/10/12/Hexo-在新机器上继续写博客/d命令部署成功.png" alt="hexo d 命令部署成功"></p>
-<h4 id="注意"><a href="#注意" class="headerlink" title="注意:"></a><strong><code>注意:</code></strong></h4><p>如果 <code>hexo d</code>没有反应，则可能是站点的主配置文件 <code>_config.yml</code>里的 <code>deploy:</code> 字段格式没写对，此处的字段名与字段值之间要有一个英文状态下的 <code>空格</code><br>正确写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: git@github.com:xxx/xxx.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.weilni.cn/2018/10/11/Hexo-的基础用法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="化十 • Kenway">
-      <meta itemprop="description" content="这宇宙光明只是瞬间 <br>黑暗才是永恒 <br>但 <br>正因为那瞬间的光明 <br>人生才有了追求与希望 <br>而，遇到你 <br>是我最大的幸福 <br>  --致Miss原">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="化十">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/11/Hexo-的基础用法/" itemprop="url">
-                  Hexo 的基础用法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-11 18:16:11" itemprop="dateCreated datePublished" datetime="2018-10-11T18:16:11+08:00">2018-10-11</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Hexo 设置部署好之后基本上静态页面基本上都不用管理了，只需要专注于写文章就好。对于文章的<code>新建</code> 、<code>生成静态文件</code> 、<code>部署</code> 就几个命令</p>
-<h4 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h4><p>建站非常简单，就几条命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;站点文件夹名称&gt;</span><br><span class="line">$ cd &lt;站点文件夹名称&gt;</span><br><span class="line">$ npm install</span><br><span class="line">//以下是插入图片时所需的插件</span><br><span class="line">$ npm install hexo-asset-image --save</span><br><span class="line">//部署到 git 上的插件配置</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<h4 id="写文章过程"><a href="#写文章过程" class="headerlink" title="写文章过程"></a>写文章过程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;article title&gt;</span><br></pre></td></tr></table></figure>
-<p>如此就会在站点 <code>_post</code> 目录下生成一个 markdown 格式的文件 和一个同名文件夹 <code>放图片用的</code>，文章就在这里编写就好，其他的都不用管了，写好文章后 <code>生成静态文件：hexo g 或者 hexo generate</code> 。<code>ps: layout 可以忽略</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">或</span><br><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></p>
-<p>生成静态文件后就可以部署了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
-<p>部署成功后就可以启动本地服务查看效果了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>用 Hexo 写文章并发布的过程其实就是几个命令的步骤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//1、一般 layout 是默认的 post</span><br><span class="line">$ hexo new [layout] &lt;文章名称&gt;</span><br><span class="line"></span><br><span class="line">//2、写好文章后生成静态文件</span><br><span class="line">$ hexo g</span><br><span class="line"></span><br><span class="line">//3、生成静态文件后部署</span><br><span class="line">$ hexo d</span><br><span class="line"></span><br><span class="line">//4、查看本地效果</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1896,7 +1838,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1935,7 +1877,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
